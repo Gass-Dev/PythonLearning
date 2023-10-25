@@ -3,14 +3,12 @@ import pandas
 
 df = pandas.read_csv("data.csv")
 
-
 # Configuration de la page
 st.set_page_config(
     page_title="Dashboard Marketing Gwen",
     page_icon="🚀",
     layout="wide"
 )
-
 
 # # Sélectionner les lignes dont l'âge est supérieur à 50 et les Hommes
 # st.write(df[(df.Age > 50) & (df.Gender == 'Male')])
@@ -67,6 +65,13 @@ with col2:
     number = form.selectbox("Sélectionnez l'âge minimum", ['18', '23', '28', '33', '38', '43'])
     number = form.selectbox("Sélectionnez la taille minimum du foyer", ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'])
     bouton = form.form_submit_button(label="Soumettre")
+
+uploaded_file = st.file_uploader("Choose a file")
+if uploaded_file is not None:
+    # To read file as bytes:
+    bytes_data = uploaded_file.getvalue()
+    st.write(bytes_data)
+
 
 # with col2:
 #     st.title("Example de widget form")
