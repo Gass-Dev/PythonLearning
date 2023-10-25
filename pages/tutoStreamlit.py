@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas
 
-df = pandas.read_csv("../data.csv")
+df = pandas.read_csv("data.csv")
 
 
 # Configuration de la page
