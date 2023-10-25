@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas
 
-df = pandas.read_csv("./data.csv")
+df = pandas.read_csv("../data.csv")
 
 
 # Configuration de la page
@@ -89,11 +89,3 @@ with col2:
 
 #         if bouton:
 #             st.write('Moyenne des âges :', df.Age.mean())
-
-st.subheader("Upload un fichier data")
-
-uploaded_file = st.file_uploader("Choose a file")
-if uploaded_file is not None:
-    # To read file as bytes:
-    bytes_data = uploaded_file.getvalue()
-    st.write(bytes_data)
